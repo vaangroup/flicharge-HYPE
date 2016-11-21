@@ -9,7 +9,7 @@
     }
 
     data = JSON.parse(evt.data);
-    hypeDoc = HYPE.documents[data.name];
+    hypeDoc = window.HYPE.documents[data.name];
     dir = (function() {
       if (data.dir === 'reverse') {
         return hypeDoc.kDirectionReverse;
