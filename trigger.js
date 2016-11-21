@@ -1,8 +1,8 @@
 (function() {
   'use strict'
 
-  function initMessageListener(hypeDoc, element, id) {
-    function receiveMessage(evt) {
+  function initMessageListener(hypeDoc) {
+    window.addEventListener("message", function(evt) {
       var data, dir;
 
       if (evt.origin.indexOf('flicharge') < 0) {
@@ -17,11 +17,11 @@
         return hypeDoc.kDirectionForward;
       })();
 
+      console.log(data);
+
       hypeDoc.startTimelineNamed(data.name + '-timeline', dir)
       return;
-    }
-
-    window.addEventListener("message", receiveMessage, false);
+    }, false);
   }
 
   window.HYPE_eventListeners = window.HYPE_eventListeners || [];
