@@ -3,23 +3,21 @@
 
   function initMessageListener(hypeDoc) {
     window.addEventListener("message", function(evt) {
-      var data, dir;
+      var data, playDirection;
 
       if (evt.origin.indexOf('flicharge') < 0) {
         return;
       }
 
       data = JSON.parse(evt.data);
-      dir = (function() {
-        if (data.dir === 'reverse') {
+      playDirection = (function() {
+        if (data.playDirection === 'reverse') {
           return hypeDoc.kDirectionReverse;
         }
         return hypeDoc.kDirectionForward;
       })();
 
-      console.log(data);
-
-      hypeDoc.startTimelineNamed(data.name + '-timeline', dir)
+      hypeDoc.startTimelineNamed(data.timeline, playDirection)
       return;
     }, false);
   }
