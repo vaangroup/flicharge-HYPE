@@ -1,0 +1,17 @@
+{
+  "name": "flicharge-hype",
+  "version": "1.0.0",
+  "description": "Hype animation files for FLI Charge",
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  },
+  "scripts": {
+    "pngcompress": "pngquant --force --skip-if-larger --speed 1 --verbose 256 --ext .png",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "The Vaan Group",
+  "license": "UNLICENSED",
+  "private": true,
+  "homepage": "https://github.com/vaangroup/flicharge-HYPE#readme"
+}
